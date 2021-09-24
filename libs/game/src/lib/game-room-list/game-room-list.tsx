@@ -1,6 +1,6 @@
 import styles from './game-room-list.module.scss';
 import { IGameRoom } from '../game-room.interface';
-import { GameRoom } from '@riddile/game';
+import { GameRoom } from '../game-room/game-room';
 
 /* eslint-disable-next-line */
 export interface GameRoomListProps {
