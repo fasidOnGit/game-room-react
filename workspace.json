@@ -1,6 +1,47 @@
 {
   "version": 2,
   "projects": {
+    "game": {
+      "root": "libs/game",
+      "sourceRoot": "libs/game/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/game",
+            "tsConfig": "libs/game/tsconfig.lib.json",
+            "project": "libs/game/package.json",
+            "entryFile": "libs/game/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/game/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/game/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/game"],
+          "options": {
+            "jestConfig": "libs/game/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "task-management": {
       "root": "apps/task-management",
       "sourceRoot": "apps/task-management/src",

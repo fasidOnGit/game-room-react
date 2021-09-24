@@ -1,0 +1,64 @@
+.game-room {
+  display: flex;
+  flex-direction: row;
+  height: 132px;
+  &__status {
+    flex: 1;
+    max-width: 20px;
+    border: 2px solid black;
+    border-right: none;
+
+    &--issue {
+      background: #FFDB72;
+    }
+
+    &--in_progress {
+      background: #61AA56;
+    }
+
+    &--scheduled {
+      background: #9A9A9A;
+    }
+
+    &--done {
+      background: black;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    box-sizing: border-box;
+    height: 50px;
+    border: 2px solid black;
+    border-bottom: none;
+    flex: 0 0 30px;
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: #cccccc;
+    span {
+      background: transparent;
+    }
+  }
+
+  &__body {
+    border: 2px solid black;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    height: 200px;
+  }
+
+  &__status-text {
+    font-size: 22px;
+  }
+}
