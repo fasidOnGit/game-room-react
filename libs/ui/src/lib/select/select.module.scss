@@ -1,0 +1,14 @@
+.select {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: block;
+  }
+
+  select,
+  label {
+    margin: .4rem 0;
+  }
+
+}
