@@ -1,0 +1,17 @@
+.date-range-picker {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    display: block;
+  }
+  div + div {
+    padding-left: 4px;
+  }
+
+  input,
+  label {
+    margin: .4rem 0;
+  }
+
+}

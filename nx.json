@@ -36,6 +36,9 @@
     "task-management-e2e": {
       "tags": [],
       "implicitDependencies": ["task-management"]
+    },
+    "ui": {
+      "tags": ["type:ui"]
     }
   }
 }

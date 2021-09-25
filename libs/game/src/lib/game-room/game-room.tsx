@@ -1,5 +1,6 @@
 import './game-room.scss';
 import { IGameRoom, TGameStatus } from '../game-room.interface';
+import { Duration, toDateString } from '@riddle/ui';
 
 /* eslint-disable-next-line */
 export interface GameRoomProps {
@@ -24,13 +25,12 @@ export function GameRoom({ gameRoom: { users, company, status, scheduledTime } }
   );
 }
 
-function Time({time}: {time: string}) {
-  const dayMs = 86_400_000;
+function Time({ time }: { time: string }) {
   const date = new Date(time);
-  const formatted = `${date.getTime() - Date.now() < dayMs ? 'Today' : date.toLocaleDateString().replace('/', '-').replace('/', '-').replace('/', '-')}, ${date.getHours()}:${date.getMinutes()}`
+  const formatted = `${Date.now() - date.getTime() < Duration.DAY_MS ? 'Today' : toDateString(date)}, ${date.getHours()}:${date.getMinutes()}`;
   return (
     <span>{formatted}</span>
-  )
+  );
 }
 
 function Status({ status }: { status: TGameStatus }) {
@@ -39,7 +39,7 @@ function Status({ status }: { status: TGameStatus }) {
     in_progress: 'In progress',
     issue: 'Issue',
     scheduled: 'Scheduled'
-  }
+  };
   return (
     <span className='game-room__status-text'>{mapper[status]}</span>
   );

@@ -16,7 +16,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@riddile/game": ["libs/game/src/index.ts"]
+      "@riddile/game": ["libs/game/src/index.ts"],
+      "@riddle/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
