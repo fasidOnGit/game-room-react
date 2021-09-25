@@ -12,15 +12,15 @@ export interface SelectProps {
   options: Array<Record<'text', string> & Record<'value', string>>;
 }
 
-function SelectInput({
-                                    name,
-                                    label,
-                                    onChange,
-                                    defaultOption,
-                                    value = '',
-                                    error,
-                                    options = [],
-                                  }: Partial<SelectProps>) {
+export function SelectInput({
+                       name,
+                       label,
+                       onChange,
+                       defaultOption,
+                       value = '',
+                       error,
+                       options = []
+                     }: Partial<SelectProps>) {
   return (
     <div className={styles['select']}>
       <label htmlFor={name}>{label}</label>

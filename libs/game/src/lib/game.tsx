@@ -3,9 +3,7 @@ import data from './data.json';
 import GameRoomList from './game-room-list/game-room-list';
 import { IGameRoom } from './game-room.interface';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { DateRangePicker, Duration, IRange } from '@riddle/ui';
-import SelectInput from '../../../ui/src/lib/select/select';
-
+import { DateRangePicker, Duration, IRange, SelectInput } from '@riddle/ui';
 /* eslint-disable-next-line */
 export interface GameProps {
 }
